@@ -6,32 +6,41 @@
   <link rel="stylesheet" href="styles.css" />
   <title>Chinatown on Thayer</title>
 </head>
+<script>
+  document.querySelector('.nav-toggle')
+    .addEventListener('click', () => {
+      document.querySelector('nav').classList.toggle('open');
+    });
+</script>
+
 <body>
-  <header role="banner">
+  <header role="banner" aria-label="Site header">
   <div class="top-bar">
     <div class="logo">
-      <a href="/">
+      <a href="/" aria-label="Chinatown on Thayer homepage">
         <img src="images/chinatown_logo.png" alt="Chinatown on Thayer" class="logo-image">
       </a>
     </div>
+    <!-- Inside .top-bar, before <nav> -->
+<button class="nav-toggle" aria-label="Toggle navigation">☰</button>
     <nav aria-label="Primary Navigation">
       <ul>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#hours">Hours</a></li>
-        <li><a href="#order">Order Now</a></li>
+        <li><a href="#menu" aria-label="View menu section">Menu</a></li>
+        <li><a href="#hours" aria-label="View hours and location section">Hours</a></li>
+        <li><a href="#order" aria-label="Order online section">Order Now</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-  <main role="main">
-    <section class="hero">
+  <main role="main" id="main-content" aria-label="Main content">
+    <section class="hero" aria-label="Welcome section">
       <h1>Welcome to <span class="highlight">Chinatown</span> on 
         <span class="highlight-secondary">Thayer</span>!</h1>
       <p class="tagline"><span class="flash-text">Serving authentic</span> <span class="highlight">Chinese</span> and <span class="highlight-secondary">Asian cuisine</span> made from <span class="flash-text">only the finest ingredients</span></p>
     </section>
 
-    <section id="menu" class="container">
+    <section id="menu" class="container" aria-label="Menu highlights">
       <h2 class="section-title">Menu Highlights</h2>
       <div class="menu-grid">
         <div class="menu-item">
@@ -56,13 +65,14 @@
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer role="contentinfo" aria-label="Site footer">
     <div class="container">
       <h2 id="hours" class="section-title">Hours & Location</h2>
       <p><strong>Mon–Thu:</strong> 11am–10pm<br>
          <strong>Fri–Sat:</strong> 11am–11pm<br>
          <strong>Sun:</strong> 12pm–9pm</p>
       <p>277 Thayer St, Providence, RI 02906</p>
+      <a href="#top" class="back-to-top" aria-label="Back to top of page">Back to top</a>
     </div>
   </footer>
 </body>

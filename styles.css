@@ -258,3 +258,36 @@ footer h2 {
 .tagline:hover .highlight-secondary {
   color: #a8d42a; /* Brighter green on hover */
 }
+
+/* in your Header & Nav styles */
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/* ≤480px: hide nav, show toggle, reveal on .open */
+@media (max-width: 480px) {
+  .nav-toggle { display: block; }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: var(--color-main);
+    position: absolute; top: 100%; right: 0;
+    width: 200px; padding: 1rem 0;
+  }
+  nav.open ul { display: flex; }
+}
+
+.back-to-top {
+  margin-top: 1rem;
+  display: inline-block;
+  color: var(--color-secondary);
+}
+.back-to-top:hover,
+.back-to-top:focus {
+  background-color: rgba(240,144,21,0.2);
+  border-radius: 4px;
+}
